@@ -29,8 +29,6 @@ class Livro {
         $this->paginas = $paginas;
     }
 
-
-
 }
 
 ?>
