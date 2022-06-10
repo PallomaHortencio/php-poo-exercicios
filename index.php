@@ -32,6 +32,7 @@ $didatico->setNiveis(['Básico', 'Médio', 'Superior  ']);
 ?>
 
 <pre><?=var_dump($tecnico, $didatico, $programacao)?></pre>
+
     
 </body>
 </html>
