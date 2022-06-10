@@ -16,7 +16,7 @@ require_once "src/Tecnico.php";
 require_once "src/Programacao.php";
 require_once "src/Didatico.php";
 
-$livroA = new Livro;
+$livroA = new Didatico;
 
 
 /* Atribuindo dados do objeto */
@@ -27,14 +27,21 @@ $livroA->setPaginas(668);
 
 
 $tecnico = new Tecnico;
-$tecnico->setFormato(['digital', 'fisico']);
+$tecnico->setFormato(['Fisico']);
+$tecnico->setTitulo("XYZ");
 
 $programacao = new Programacao;
-$programacao->setArea('Web', 'Design', 'Ux');
+$programacao->setArea( 'Design');
 
 $didatico = new Didatico;
-$didatico->setDisciplina('Português', 'Geografia', 'História');
-$didatico->setNiveis(['Básico', 'Médio', 'Superior  ']);
+$didatico->setDisciplina('Português');
+$didatico->setNiveis(['Avançado']);
+
+$livroProgFrontEnd = new Programacao;
+$livroProgFrontEnd->setTitulo("JavaScript"); // herda de Livro
+$livroProgFrontEnd->setAutor("Maujor");// herda de Livro
+$livroProgFrontEnd->setFormato(["digital"]);// herda de Tecnico
+$livroProgFrontEnd->setArea("Front-End"); // dele mesmo
 
 
 
@@ -43,14 +50,31 @@ $didatico->setNiveis(['Básico', 'Médio', 'Superior  ']);
 
 <h2>Livros Indicados:</h2>
 <h3> <?=$livroA->getTitulo()?> </h3>
+
 <h4> Autor: <?=$livroA->getAutor()?> </h4>
+
 <p> Páginas: <?=$livroA->getPaginas()?> </p>
-<p> Tecnico: <?=?></p>
+
+<p> Tecnico: <?=$tecnico->getFormato()?></p>
+
+<p> Programação: <?=$programacao->getArea()?></p>
+
+<p>Didatico: <?=$didatico->getDisciplina()?>, <?= $didatico->getNiveis()?> </p>
+
 <hr>
 
 
-<pre><?=var_dump($tecnico, $didatico, $programacao)?></pre>
+<pre><?=var_dump($tecnico, $didatico, $programacao, $livroProgFrontEnd)?></pre>
 
+<hr>
+
+
+<ul>
+    <li>Titulo: <?=$livroProgFrontEnd->getTitulo()?></li>
+    <li>Autor: <?=$livroProgFrontEnd->getAutor()?></li>
+    <li>Formato: <?=$livroProgFrontEnd->getFormato()?></li>
+    <li>Area: <?=$livroProgFrontEnd->getArea()?></li>
+</ul>
     
 </body>
 </html>

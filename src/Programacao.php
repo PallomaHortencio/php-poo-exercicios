@@ -1,6 +1,6 @@
 <?php
 require_once "Tecnico.php";
-class Programacao extends Livro {
+class Programacao extends Tecnico {
     private string $area;
 
    
