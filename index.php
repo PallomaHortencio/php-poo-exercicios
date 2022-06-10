@@ -12,43 +12,26 @@
 
 <?php
 /* Imporanto a classe */
-require_once "src/Livro.php";
+require_once "src/Tecnico.php";
+require_once "src/Programacao.php";
+require_once "src/Didatico.php";
 
-/* Criação de objetos */
-$livroA = new Livro;
-$livroB = new Livro;
-$livroC = new Livro;
+$tecnico = new Tecnico;
+$tecnico->setFormato(['digital', 'fisico']);
 
-/* Atribuindo dados do objeto */
-$livroA->setTitulo("O Símbolo Perdido");
-$livroA->setAutor("Dan Brown");
-$livroA->setPaginas(668);
+$programacao = new Programacao;
+$programacao->setArea('Web', 'Design', 'Ux');
 
-$livroB->setTitulo("O Pequeno Principe");
-$livroB->setAutor("Antoine de Sanit-Exupéry");
-$livroB->setPaginas(132);
+$didatico = new Didatico;
+$didatico->setDisciplina('Português', 'Geografia', 'História');
+$didatico->setNiveis(['Básico', 'Médio', 'Superior  ']);
 
-$livroC->setTitulo("A Divina Comédia");
-$livroC->setAutor("Dante Alighieri");
-/* $livroC->setPaginas(600); */
+
+
 
 ?>
 
-
-<h2>Livros Indicados:</h2>
-<h3> <?=$livroA->getTitulo()?> </h3>
-<h4> Autor: <?=$livroA->getAutor()?> </h4>
-<p> Páginas: <?=$livroA->getPaginas()?> </p>
-<hr>
-
-<h3> <?=$livroB->getTitulo()?> </h3>
-<h4> Autor: <?=$livroB->getAutor()?> </h4>
-<p> Páginas: <?=$livroB->getPaginas()?> </p>
-<hr>
-
-<h3> <?=$livroC->getTitulo()?> </h3>
-<h4> Autor: <?=$livroC->getAutor()?> </h4>
-<p> Páginas: <?=$livroC->getPaginas()?> </p>
+<pre><?=var_dump($tecnico, $didatico, $programacao)?></pre>
     
 </body>
 </html>
