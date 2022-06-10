@@ -16,6 +16,16 @@ require_once "src/Tecnico.php";
 require_once "src/Programacao.php";
 require_once "src/Didatico.php";
 
+$livroA = new Livro;
+
+
+/* Atribuindo dados do objeto */
+$livroA->setTitulo("O Símbolo Perdido");
+$livroA->setAutor("Dan Brown");
+$livroA->setPaginas(668);
+
+
+
 $tecnico = new Tecnico;
 $tecnico->setFormato(['digital', 'fisico']);
 
@@ -30,6 +40,14 @@ $didatico->setNiveis(['Básico', 'Médio', 'Superior  ']);
 
 
 ?>
+
+<h2>Livros Indicados:</h2>
+<h3> <?=$livroA->getTitulo()?> </h3>
+<h4> Autor: <?=$livroA->getAutor()?> </h4>
+<p> Páginas: <?=$livroA->getPaginas()?> </p>
+<p> Tecnico: <?=?></p>
+<hr>
+
 
 <pre><?=var_dump($tecnico, $didatico, $programacao)?></pre>
 
