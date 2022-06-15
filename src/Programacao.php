@@ -14,6 +14,12 @@ class Programacao extends Tecnico {
     {
         $this->area = $area;
     }
+
+    public function formataTitulo ():string {
+       
+        return "<i style='color:blue'>".$this->getTitulo()."</i>";
+        
+    }
 }
 
 ?>

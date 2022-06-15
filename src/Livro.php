@@ -29,6 +29,11 @@ abstract class Livro {
         $this->paginas = $paginas;
     }
 
+    public function formataTitulo ():string {
+       
+        return "<b>".mb_strtoupper ($this->getTitulo())."</b>";
+    }
+
 }
 
 ?>

@@ -26,17 +26,17 @@ $livroA->setAutor("Dan Brown");
 $livroA->setPaginas(668);
 
 
-
 $tecnico = new Tecnico;
 $tecnico->setFormato(['Fisico']);
 $tecnico->setTitulo("XYZ");
 
 $programacao = new Programacao;
 $programacao->setArea( 'Design');
-
+$programacao->setTitulo('O Simbolo Perdido');
 $didatico = new Didatico;
 $didatico->setDisciplina('Português');
 $didatico->setNiveis(['Avançado']);
+$didatico->setTitulo("O pequeno principe");
 
 $livroProgFrontEnd = new Programacao;
 $livroProgFrontEnd->setTitulo("JavaScript"); // herda de Livro
@@ -65,9 +65,7 @@ $livroProgFrontEnd->setArea("Front-End"); // dele mesmo
 <hr>
 
 
-<pre><?=var_dump($tecnico, $didatico, $programacao, $livroProgFrontEnd)?></pre>
-
-<hr>
+<!-- <pre><?=var_dump($tecnico, $didatico, $programacao, $livroProgFrontEnd)?></pre> -->
 
 
 <ul>
@@ -75,7 +73,21 @@ $livroProgFrontEnd->setArea("Front-End"); // dele mesmo
     <li>Autor: <?=$livroProgFrontEnd->getAutor()?></li>
     <li>Formato: <?=$livroProgFrontEnd->getFormato()?></li>
     <li>Area: <?=$livroProgFrontEnd->getArea()?></li>
-</ul>
     
+</ul>
+
+<hr>
+
+<!-- Testes exercicio 3 -->
+<h3>Resultados Exercício 3</h3>
+<p>Técnico:
+    <?=$tecnico->formataTitulo()?> </p>
+
+<p>Programação:
+    <?=$programacao->formataTitulo()?> </p>
+
+<p>Didático: <?=$didatico->formataTitulo()?></p>
+
+
 </body>
 </html>
